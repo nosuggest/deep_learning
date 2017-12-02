@@ -17,4 +17,4 @@
 最大化当前数据出现可能的概率密度函数
 
 ### 4.approximate nerual network
-http://upload-images.jianshu.io/upload_images/1129359-24a3b7c78716ac0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240
+![](http://upload-images.jianshu.io/upload_images/1129359-24a3b7c78716ac0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
