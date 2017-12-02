@@ -1,4 +1,4 @@
-# 这边只概述理论，详细参加我的个人博客：
+# 这边只概述理论，详细参见我的个人博客：
 [深度学习下的电商商品推荐](http://shataowei.com/2017/08/19/深度学习下的电商商品推荐/)
 
 # 理论概述
@@ -17,4 +17,4 @@
 最大化当前数据出现可能的概率密度函数
 
 ### 4.approximate nerual network
-[]!(http://upload-images.jianshu.io/upload_images/1129359-24a3b7c78716ac0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[](http://upload-images.jianshu.io/upload_images/1129359-24a3b7c78716ac0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
