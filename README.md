@@ -1,5 +1,12 @@
+# 介绍
 非专业的nlp、图像工程师，tensorflow调包工程师，注重快速实现，那么，让我们一起做点有趣的事情吧！
+这个工程的目的是将自己在工程和学术研究中，一些应用到深度学习的思路和方法整理汇总出来：
 
+- 帮助深度学习入门同学快速上手
+- 提供一些在现有的机器学习方向上的新的方向和思路的整理
+- 拓宽思维的禁锢
+
+# 项目
 ## CNN_applied_classification
 利用全连接+CNN，提取稀疏特征，并产出stack初始层的思路
 
@@ -23,3 +30,15 @@
 ## Word2vec_recommend
 利用样本频率+Huffman树路径最大概率的方法，实现特征向量化的思路
 ![](http://upload-images.jianshu.io/upload_images/1129359-612db0b5dc8c9041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+# 工具
+- python 3.6
+- tensorflow 1.0.0
+- nltk 3.2.4
+
+# 其他
+鄙人才疏学浅，不免有错误的地方，如果你发现了，麻烦通过以下的方式告知：
+- WeChat:sharalion
+- Issue
+- E-mail:stw386@sina.com
+- [Message Board in my bolg](http://shataowei.com)
