@@ -4,7 +4,8 @@
 利用全连接+CNN，提取稀疏特征，并产出stack初始层的思路
 
 **网络结构**
-![](http://upload-images.jianshu.io/upload_images/1129359-57cb2c9e880b440b.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/1129359-59c552e6a61b37e7.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ## SSD_object_recognition
 利用ssd直接实现物体区域识别
@@ -14,6 +15,7 @@
 ![](http://upload-images.jianshu.io/upload_images/1129359-6d4fd382feeb6239.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **视频版本地址：**
+
 [行人识别场景](https://v.qq.com/x/page/b0548k7ffel.html)
 
 [车辆识别场景](https://v.qq.com/x/page/a0567wd27jz.html)
