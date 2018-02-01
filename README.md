@@ -35,6 +35,8 @@
 - python 3.6
 - tensorflow 1.0.0
 - nltk 3.2.4
+- jieba 0.39
+- data_preprocessing 0.0.2
 
 # 其他
 鄙人才疏学浅，不免有错误的地方，如果你发现了，麻烦通过以下的方式告知：
