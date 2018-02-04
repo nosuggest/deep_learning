@@ -91,7 +91,7 @@ with tf.Session() as sess:
                 lr: learning_rate
             }
 
-            step, train_loss, _ = sess.run([global_step, loss, train_op], feed)  # cost
+            step, train_loss, _ = sess.run([global_step, loss, train_op], feed)
             losses['train'].append(train_loss)
 
             # Show every <show_every_n_batches> batches

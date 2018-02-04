@@ -91,8 +91,8 @@ def get_user_feature_layer(cate_embed_layer, brand_embed_layer, dropout_layer):
         brand_fc_layer = tf.layers.dense(brand_embed_layer, embed_dim, name="brand_fc_layer", activation=tf.nn.relu)
 
         # 第二层全连接
-        bc_combine_layer = tf.concat([cate_fc_layer, brand_fc_layer, dropout_layer], 2)  # (?, 1, 128)
-        bc_combine_layer = tf.contrib.layers.fully_connected(bc_combine_layer, 200, tf.tanh)  # (?, 1, 200)
+        bc_combine_layer = tf.concat([cate_fc_layer, brand_fc_layer, dropout_layer], 2)
+        bc_combine_layer = tf.contrib.layers.fully_connected(bc_combine_layer, 200, tf.tanh)
 
         bc_combine_layer_flat = tf.reshape(bc_combine_layer, [-1, 200])
     return bc_combine_layer, bc_combine_layer_flat
@@ -121,10 +121,10 @@ def bulid():
         cost = tf.losses.softmax_cross_entropy(targets, inference)
         loss = tf.reduce_mean(cost)
         # 优化损失
-    #     train_op = tf.train.AdamOptimizer(lr).minimize(loss)  #cost
+    #     train_op = tf.train.AdamOptimizer(lr).minimize(loss)
     global_step = tf.Variable(0, name="global_step", trainable=False)
     optimizer = tf.train.AdamOptimizer(lr)
-    gradients = optimizer.compute_gradients(loss)  # cost
+    gradients = optimizer.compute_gradients(loss)
     train_op = optimizer.apply_gradients(gradients, global_step=global_step)
     return item, brand, cate, targets, lr, dropout_keep_prob, inference, cost, loss, global_step, train_op, item_combine_layer_flat
 

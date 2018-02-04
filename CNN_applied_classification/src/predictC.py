@@ -49,7 +49,7 @@ for batch_i in range(len(features) // batch_size):
         dropout_keep_prob: 1
     }
 
-    item_state = np.array(sess.run([item_combine_layer_flat], feed)).reshape(-1, 200)  # cost
+    item_state = np.array(sess.run([item_combine_layer_flat], feed)).reshape(-1, 200)
     item_result.append(item_state)
     user_result.append(x.take(0, 1))
     print('we have reach %s times' % batch_i)
