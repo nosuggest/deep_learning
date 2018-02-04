@@ -9,6 +9,7 @@
 # 项目
 ## RNN_applied_classification
 利用GRU，提取用户的行为时序稀疏特征，并产出stack初始层的思路
+
 ![](http://upload-images.jianshu.io/upload_images/1129359-d5b28a58edc73240.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## CNN_applied_classification
