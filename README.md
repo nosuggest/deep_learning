@@ -18,6 +18,14 @@
 **网络结构**
 ![](http://upload-images.jianshu.io/upload_images/1129359-59c552e6a61b37e7.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+## Wide & Deep
+Google 推荐算法的代码修正，原始代码来源于网络但是不可能执行及流程不完整，修复代码demo，现可以直接复制后使用
+
+**网络结构**
+
+![](http://upload-images.jianshu.io/upload_images/1129359-e90396f9e07c4af7.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 
 ## SSD_object_recognition
 利用ssd直接实现物体区域识别
