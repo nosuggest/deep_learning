@@ -34,7 +34,14 @@ Google 推荐算法的代码修正，原始代码来源于网络但是不能执�
 
 ![](http://upload-images.jianshu.io/upload_images/1129359-e90396f9e07c4af7.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+**注意**
 
+在Linux环境下，tensorflow==1.0.0会有如下的报错，而MacBook环境下，tensorflow=1.0.0就不会报错：
+
+```python
+double free or corruption (!prev): 0x0000000001f03dd0 ***
+```
+解决方法是更新版本到1.6.0（其他版本我没试），官方之前有人提过[issue](https://github.com/tensorflow/tensorflow/issues/15848)，大家注意一哈！
 
 ## SSD_object_recognition
 利用ssd直接实现物体区域识别
