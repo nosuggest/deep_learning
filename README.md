@@ -14,6 +14,7 @@
 
 关于深度学习相关的目标向量化的介绍，可以快速入门一下[深度学习下的电商商品推荐](http://shataowei.com/2017/08/19/深度学习下的电商商品推荐/)。
 
+关于深度学习相关的多层感知机的介绍，可以快速入门一下[基于Tensorflow实现多层感知机网络MLPs](http://shataowei.com/2018/07/25/基于Tensorflow实现多层感知机网络MLPs/)。
 
 # 项目
 ## RNN_applied_classification
@@ -59,6 +60,13 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 ## Word2vec_recommend
 利用样本频率+Huffman树路径最大概率的方法，实现特征向量化的思路
 ![](http://upload-images.jianshu.io/upload_images/1129359-612db0b5dc8c9041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## MLPs
+最简单的入门级神经网络算法
+![多层感知机网络](https://upload-images.jianshu.io/upload_images/1129359-967dcdad03d8ff41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
 
 # 工具
 - python 3.6
