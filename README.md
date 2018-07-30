@@ -16,6 +16,8 @@
 
 关于深度学习相关的多层感知机的介绍，可以快速入门一下[基于Tensorflow实现多层感知机网络MLPs](http://shataowei.com/2018/07/25/基于Tensorflow实现多层感知机网络MLPs/)。
 
+关于深度学习相关的deepfm的介绍，可以快速入门一下。
+
 # 项目
 ## RNN_applied_classification
 利用GRU，提取用户的行为时序稀疏特征，并产出stack初始层的思路
@@ -64,6 +66,10 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 ## MLPs
 最简单的入门级神经网络算法
 ![多层感知机网络](https://upload-images.jianshu.io/upload_images/1129359-967dcdad03d8ff41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+## DeepFm
+入门级别的CTR Prediction的神经网络算法
+![DeepFM的网络结构图](https://upload-images.jianshu.io/upload_images/1129359-9e634bcced58d53f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
