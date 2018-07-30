@@ -18,6 +18,8 @@
 
 关于深度学习相关的deepfm的介绍，可以快速入门一下[基于Tensorflow实现DeepFM](http://shataowei.com/2018/07/30/基于Tensorflow实现DeepFM/)。
 
+关于深度学习相关的Deep Neural Networks for YouTube Recommendations的介绍，可以快速入门一下[利用DNN做推荐的实现过程总结](https://zhuanlan.zhihu.com/p/38638747)。
+
 # 项目
 ## RNN_applied_classification
 利用GRU，提取用户的行为时序稀疏特征，并产出stack初始层的思路
@@ -71,7 +73,9 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 入门级别的CTR Prediction的神经网络算法
 ![DeepFM的网络结构图](https://upload-images.jianshu.io/upload_images/1129359-9e634bcced58d53f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
+## Deep Neural Networks for YouTube Recommendations
+最近在利用来自google的YouTube团队发表在16年9月的RecSys会议的论文Deep Neural Networks for YouTube Recommendations做用户个性化商品推荐，看到不少论文上的理论总结分析，都很精彩，我手动实现了一遍，总结了一些实际工程中的体会，给大家也给自己一个总结交代。
+![Deep Neural Networks for YouTube Recommendations](https://upload-images.jianshu.io/upload_images/1129359-67a74922f9908400.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 # 工具
