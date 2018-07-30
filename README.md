@@ -16,7 +16,7 @@
 
 关于深度学习相关的多层感知机的介绍，可以快速入门一下[基于Tensorflow实现多层感知机网络MLPs](http://shataowei.com/2018/07/25/基于Tensorflow实现多层感知机网络MLPs/)。
 
-关于深度学习相关的deepfm的介绍，可以快速入门一下。
+关于深度学习相关的deepfm的介绍，可以快速入门一下[基于Tensorflow实现DeepFM](http://shataowei.com/2018/07/30/基于Tensorflow实现DeepFM/)。
 
 # 项目
 ## RNN_applied_classification
