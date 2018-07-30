@@ -78,8 +78,12 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 ![Deep Neural Networks for YouTube Recommendations](https://upload-images.jianshu.io/upload_images/1129359-67a74922f9908400.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 normal_version：按照论文未修改的basemodel
+
 attention_version：在basemodel的基础上，加了attention机制（线性attention/rnnattention）
+
 record_dataformat_version：在basemodel的基础上，利用record机制存储数据，加快训练速度
+
+
 
 
 # 工具
