@@ -73,7 +73,7 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 入门级别的CTR Prediction的神经网络算法
 ![DeepFM的网络结构图](https://upload-images.jianshu.io/upload_images/1129359-9e634bcced58d53f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-可能感兴趣的其他相关内容：**[FM部分](https://github.com/sladesha/machine_learning/tree/master/FM)**|*[FFM部分](https://github.com/sladesha/machine_learning/tree/master/FFM)**
+可能感兴趣的其他相关内容：**[FM部分](https://github.com/sladesha/machine_learning/tree/master/FM)**||**[FFM部分](https://github.com/sladesha/machine_learning/tree/master/FFM)**
 
 
 
