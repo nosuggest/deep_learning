@@ -6,7 +6,7 @@ import numpy as np
 def load_data():
     train_data = {}
 
-    file_path = '../../data/tiny_train_input.csv'
+    file_path = '../data/tiny_train_input.csv'
     data = pd.read_csv(file_path, header=None)
     data.columns = ['c' + str(i) for i in range(data.shape[1])]
     label = data.c0.values

@@ -18,7 +18,7 @@ class Args():
     batch_size = 64
     learning_rate = 1.0
     l2_reg_rate = 0.01
-    checkpoint_dir = '/Users/slade/Documents/Personalcode/machine-learning/data/saver/ckpt'
+    checkpoint_dir = '/Users/slade/Documents/Code/ml/data/saver/ckpt'
     is_training = True
     # deep_activation = tf.nn.relu
 
@@ -192,7 +192,7 @@ if __name__ == '__main__':
     data = load_data()
     args.feature_sizes = data['feat_dim']
     args.field_size = len(data['xi'][0])
-    args.is_training = False
+    args.is_training = True
 
     with tf.Session(config=gpu_config) as sess:
         Model = model(args)
