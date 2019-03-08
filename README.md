@@ -57,7 +57,7 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 
 **视频版本地址：**
 
-[行人识别场景](https://v.qq.com/x/page/b0548k7ffel.html)
+[行人识别场景](https://v.qq.com/x/page/j05679xhryx.html)
 
 [车辆识别场景](https://v.qq.com/x/page/a0567wd27jz.html)
 
