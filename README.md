@@ -96,7 +96,13 @@ record_dataformat_version：在basemodel的基础上，利用record机制存储�
 - RCNN_GRU/process: 数据预处理的脚本
 
 ## TextCNN
-在做**黄反广告**文本的识别，初版本是朴素贝叶斯+LR(recall:72%，precision:88%)，优化版是CBOW+LR(recall:77%，precision:88%)，进阶版是CBOW/GLOVE+MLR(recall:85%，precision:91%)，当前版是\[D2V,CBOW,GLOVE]+TextCNN(recall:90%，precision:92%)
+
+在做**黄反广告**文本的识别:
+
+- 初版本是朴素贝叶斯+LR(recall:72%，precision:88%)
+- 优化版是CBOW+LR(recall:77%，precision:88%)
+- 进阶版是CBOW/GLOVE+MLR(recall:85%，precision:91%)
+- 当前版是\[D2V,CBOW,GLOVE]+TextCNN(recall:90%，precision:92%)
 
 # 工具
 - python 3.6
