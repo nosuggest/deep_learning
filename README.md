@@ -20,6 +20,8 @@
 
 关于深度学习相关的Deep Neural Networks for YouTube Recommendations的介绍，可以快速入门一下[利用DNN做推荐的实现过程总结](https://zhuanlan.zhihu.com/p/38638747)。
 
+关于深度学习相关的RCNN_GRU的介绍，实在没空写博客了，sorry
+
 关于深度学习相关的TextCNN的介绍，实在没空写博客了，sorry
 
 # 项目
@@ -81,11 +83,17 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 最近在利用来自google的YouTube团队发表在16年9月的RecSys会议的论文Deep Neural Networks for YouTube Recommendations做用户个性化商品推荐，看到不少论文上的理论总结分析，都很精彩，我手动实现了一遍，总结了一些实际工程中的体会，给大家也给自己一个总结交代。
 ![Deep Neural Networks for YouTube Recommendations](https://upload-images.jianshu.io/upload_images/1129359-67a74922f9908400.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+
 normal_version：按照论文未修改的basemodel
 
 attention_version：在basemodel的基础上，加了attention机制（线性attention/rnn attention）
 
 record_dataformat_version：在basemodel的基础上，利用record机制存储数据，加快训练速度
+
+## RCNN_GRU
+
+- RCNN_GRU/model: 初始化模型的脚本
+- RCNN_GRU/process: 数据预处理的脚本
 
 ## TextCNN
 在做**黄反广告**文本的识别，初版本是朴素贝叶斯+LR(recall:72%，precision:88%)，优化版是CBOW+LR(recall:77%，precision:88%)，进阶版是CBOW/GLOVE+MLR(recall:85%，precision:91%)，当前版是\[D2V,CBOW,GLOVE]+TextCNN(recall:90%，precision:92%)
@@ -98,11 +106,5 @@ record_dataformat_version：在basemodel的基础上，利用record机制存储�
 - data_preprocessing 0.0.2
 
 # 其他
-鄙人才疏学浅，不免有错误的地方，如果你发现了，麻烦通过以下的方式告知：
-- WeChat:sharalion
-- Issue
 - E-mail:stw386@sina.com
 - [Message Board in my bolg](http://shataowei.com)
-- 公众号：ml_trip
-
-![](https://upload-images.jianshu.io/upload_images/1129359-654dc61c581d94e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
