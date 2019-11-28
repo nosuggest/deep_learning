@@ -20,6 +20,8 @@
 
 关于深度学习相关的Deep Neural Networks for YouTube Recommendations的介绍，可以快速入门一下[利用DNN做推荐的实现过程总结](https://zhuanlan.zhihu.com/p/38638747)。
 
+关于深度学习相关的TextCNN的介绍，实在没空写博客了，sorry
+
 # 项目
 ## RNN_applied_classification
 利用GRU，提取用户的行为时序稀疏特征，并产出stack初始层的思路
@@ -75,8 +77,6 @@ double free or corruption (!prev): 0x0000000001f03dd0 ***
 
 可能感兴趣的其他相关内容：**[FM部分](https://github.com/sladesha/machine_learning/tree/master/FM)**||**[FFM部分](https://github.com/sladesha/machine_learning/tree/master/FFM)**
 
-
-
 ## Deep Neural Networks for YouTube Recommendations
 最近在利用来自google的YouTube团队发表在16年9月的RecSys会议的论文Deep Neural Networks for YouTube Recommendations做用户个性化商品推荐，看到不少论文上的理论总结分析，都很精彩，我手动实现了一遍，总结了一些实际工程中的体会，给大家也给自己一个总结交代。
 ![Deep Neural Networks for YouTube Recommendations](https://upload-images.jianshu.io/upload_images/1129359-67a74922f9908400.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -87,8 +87,8 @@ attention_version：在basemodel的基础上，加了attention机制（线性att
 
 record_dataformat_version：在basemodel的基础上，利用record机制存储数据，加快训练速度
 
-
-
+## TextCNN
+在做**黄反广告**文本的识别，初版本是朴素贝叶斯+LR(recall:72%，precision:88%)，优化版是CBOW+LR(recall:77%，precision:88%)，进阶版是CBOW/GLOVE+MLR(recall:85%，precision:91%)，当前版是\[D2V,CBOW,GLOVE]+TextCNN(recall:90%，precision:92%)
 
 # 工具
 - python 3.6
