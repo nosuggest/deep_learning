@@ -24,6 +24,8 @@
 
 关于深度学习相关的TextCNN的介绍，实在没空写博客了，sorry
 
+关于深度学习相关的Bert做fine-tune的代码(类似接口，具体实现按照时间项目去改)，我每次做nlp的baseline的时候，都是在这个代码上进行更改，主要是ner和classify两个问题的模版
+
 # 项目
 ## RNN_applied_classification
 利用GRU，提取用户的行为时序稀疏特征，并产出stack初始层的思路
@@ -103,6 +105,9 @@ record_dataformat_version：在basemodel的基础上，利用record机制存储�
 - 优化版是CBOW+LR(recall:77%，precision:88%)
 - 进阶版是CBOW/GLOVE+MLR(recall:85%，precision:91%)
 - 当前版是\[D2V,CBOW,GLOVE]+TextCNN(recall:90%，precision:92%)
+
+## Bert
+Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://github.com/sladesha/Reflection_Summary/tree/master/对外技术分享)
 
 # 工具
 - python 3.6
