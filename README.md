@@ -24,7 +24,7 @@
 
 关于深度学习相关的TextCNN的介绍，实在没空写博客了，sorry
 
-关于深度学习相关的Bert做fine-tune的代码(类似接口，具体实现按照时间项目去改)，我每次做nlp的baseline的时候，都是在这个代码上进行更改，主要是ner和classify两个问题的模版
+关于深度学习相关的Bert做fine-tune的代码(类似接口，具体实现按照时间项目去改)，我每次做nlp的baseline的时候，都是在这个代码上进行更改，主要是ner和classify两个问题的模版，可以快速入门一下[Bert你需要知道的一些细节](https://github.com/sladesha/Reflection_Summary/tree/master/对外技术分享)
 
 # 项目
 ## RNN_applied_classification
