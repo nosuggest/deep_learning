@@ -26,6 +26,9 @@
 
 关于深度学习相关的Bert做fine-tune的代码(类似接口，具体实现按照时间项目去改)，我每次做nlp的baseline的时候，都是在这个代码上进行更改，主要是ner和classify两个问题的模版，可以快速入门一下[Bert你需要知道的一些细节](https://github.com/sladesha/Reflection_Summary/tree/master/对外技术分享)
 
+关于深度学习相关的XDeepFM的介绍，可以快速入门一下[xDeepFM架构理解及实现](http://www.shataowei.com/2019/12/17/xDeepFM架构理解及实现/)。
+
+
 # 项目
 ## RNN_applied_classification
 利用GRU，提取用户的行为时序稀疏特征，并产出stack初始层的思路
