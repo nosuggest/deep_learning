@@ -112,6 +112,13 @@ record_dataformat_version：在basemodel的基础上，利用record机制存储�
 ## Bert
 Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://github.com/sladesha/Reflection_Summary/tree/master/对外技术分享)
 
+## XDeepFM
+
+**网络结构**
+![](https://tva1.sinaimg.cn/large/006tNbRwgy1ga00gfhqq6j30t80j6di5.jpg)
+
+主要把网络架构梳理了一边，后面项目结束再把整体的工程代码开源出来。
+
 # 工具
 - python 3.6
 - tensorflow 1.0.0
