@@ -122,7 +122,7 @@ Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://g
 ## DeepInterestNetwork
 ![](https://tva1.sinaimg.cn/large/006tNbRwgy1ga3b1wqeacj30kc0fr405.jpg)
 
-和常见的网络上的版本不同的有两个地方的修改，各人使用上比[官方版本](https://github.com/zhougr1993/DeepInterestNetwork/blob/master/din/model.py)要提升0.2pp的auc：
+和常见的网络上的版本不同的有两个地方的修改，我司实际使用上比[官方版本](https://github.com/zhougr1993/DeepInterestNetwork/blob/master/din/model.py)要提升0.2pp的auc：
 
 - dice中的predict的bn过程采取了训练集的期望方差
 - 在fc的过程中用了tf.tanh替代tf.sigmoid/dice/prule
