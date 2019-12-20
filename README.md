@@ -28,6 +28,7 @@
 
 关于深度学习相关的XDeepFM的介绍，可以快速入门一下[xDeepFM架构理解及实现](http://www.shataowei.com/2019/12/17/xDeepFM架构理解及实现/)。
 
+关于深度学习相关的DeepInterestNetwork的介绍，实在没空写博客了，sorry
 
 # 项目
 ## RNN_applied_classification
