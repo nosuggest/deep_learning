@@ -30,6 +30,15 @@
 
 关于深度学习相关的DeepInterestNetwork的介绍，实在没空写博客了，sorry
 
+关于深度学习相关的Estimator框架模版的介绍，原因有三：
+
+- 组内同学开发不规范，tf代码风格包括：slim,keras,contrib,graph各式各样的写法，混乱不好管理
+- 代码逻辑不清晰，随处定义变量，随处定义函数
+- 由tornado服务前往serving服务，需要更新的更频繁，且代码更加简单易上手，不需要高频去查各种tf接口
+
+
+****
+
 # 项目
 ## RNN_applied_classification
 利用GRU，提取用户的行为时序稀疏特征，并产出stack初始层的思路
@@ -127,6 +136,14 @@ Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://g
 
 - dice中的predict的bn过程采取了训练集的期望方差
 - 在fc的过程中用了tf.tanh替代tf.sigmoid/dice/prule
+
+## Estimator框架模版
+
+- 组内同学开发不规范，tf代码风格包括：slim,keras,contrib,graph各式各样的写法，混乱不好管理
+- 代码逻辑不清晰，随处定义变量，随处定义函数
+- 由tornado服务前往serving服务，需要更新的更频繁
+
+Estimator框架重新写了DeepFm和TextCNN，总的来说，代码量差不多只是更加规范化了，以后建议以Estimator框架为模版开发。
 
 # 工具
 - python 3.6
