@@ -30,6 +30,7 @@ flags.DEFINE_integer("train_steps", 10000, "Number of (global) training steps to
 flags.DEFINE_string("data_dir", "textcnn_data", "Directory containing the dataset")
 flags.DEFINE_string("model_dir", "./model_dir", "Base directory for saving model")
 flags.DEFINE_string("date_dir", '', "model date partion")
+flags.DEFINE_string("servable_model_dir", './exportModel', "save model folder")
 flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated list of number of window size in each filter")
 flags.DEFINE_string("pad_word", "<pad>", "used for pad sentence")
 flags.DEFINE_boolean("clear_existing_model", False, "clear existing model or not")
@@ -116,6 +117,7 @@ def my_model(features, labels, mode, params):
     :description:和之前卷积过程一致：https://github.com/sladesha/deep_learning/blob/master/TextCNN/textcnn_data/text_cnn.py
     '''
     sentence = features['sentence']
+    print("sentence.shape%s:" % (sentence.shape))
     embeddings = tf.get_variable(name="embeddings", dtype=tf.float32,
                                  shape=[params["vocab_size"], FLAGS.embedding_size])
     sentence = tf.nn.embedding_lookup(embeddings, sentence)
@@ -263,7 +265,7 @@ def main(_):
 
     elif FLAGS.task_type == 'export':
         feature_spec = {
-            'sentence': tf.placeholder(dtype=tf.int64, shape=[None], name='sentence_id')
+            'sentence': tf.placeholder(dtype=tf.int64, shape=[None, FLAGS.sentence_max_len], name='sentence_id')
         }
         serving_input_receiver_fn = tf.estimator.export.build_raw_serving_input_receiver_fn(feature_spec)
         classifier.export_savedmodel(FLAGS.servable_model_dir, serving_input_receiver_fn)
