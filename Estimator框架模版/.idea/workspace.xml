@@ -24,8 +24,8 @@
       <file leaf-file-name="TextCNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/TextCNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3153">
-              <caret line="273" column="4" selection-start-line="273" selection-start-column="4" selection-end-line="273" selection-end-column="4" />
+            <state relative-caret-position="4050">
+              <caret line="270" column="52" selection-start-line="270" selection-start-column="52" selection-end-line="270" selection-end-column="52" />
               <folding>
                 <element signature="e#120#158#0" expanded="true" />
               </folding>
@@ -33,23 +33,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_url.dat" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/textcnn_data/data_url.dat">
+      <file leaf-file-name="TextCNNDataMake.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/TextCNNDataMake.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="59" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DeepFM.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/DeepFM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2400">
-              <caret line="160" column="35" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="35" />
+            <state relative-caret-position="180">
+              <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
               <folding>
-                <element signature="e#118#131#0" expanded="true" />
+                <element signature="e#129#144#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +60,9 @@
         <option value="$PROJECT_DIR$/TextCNN.py" />
         <option value="$PROJECT_DIR$/DeepFM.py" />
         <option value="$PROJECT_DIR$/model/DeepFM.py" />
-        <option value="$PROJECT_DIR$/model/TextCNN.py" />
         <option value="$PROJECT_DIR$/model/textcnn_data/data_url.dat" />
+        <option value="$PROJECT_DIR$/model/TextCNN.py" />
+        <option value="$PROJECT_DIR$/data/TextCNNDataMake.py" />
       </list>
     </option>
   </component>
@@ -145,21 +136,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="textcnn_data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Estimator框架模版" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Estimator框架模版" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -176,6 +153,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model/textcnn_data" />
       <recent name="$PROJECT_DIR$/model/textcnn" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -566,31 +544,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/DeepFM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
-          <caret line="160" column="35" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="35" />
-          <folding>
-            <element signature="e#118#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/textcnn_data/dataset_params.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TextCNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3153">
-          <caret line="273" column="4" selection-start-line="273" selection-start-column="4" selection-end-line="273" selection-end-column="4" />
-          <folding>
-            <element signature="e#120#158#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -604,6 +562,60 @@
         <state relative-caret-position="0">
           <caret line="0" column="59" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/DeepFM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="160" column="35" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="35" />
+          <folding>
+            <element signature="e#118#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/textcnn_data/words.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/exportModel/1578455804/saved_model.pb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TextCNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4050">
+          <caret line="270" column="52" selection-start-line="270" selection-start-column="52" selection-end-line="270" selection-end-column="52" />
+          <folding>
+            <element signature="e#120#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/argparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18959">
+          <caret line="794" column="17" selection-start-line="794" selection-start-column="17" selection-end-line="794" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/TextCNNDataMake.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="63" selection-start-line="12" selection-start-column="63" selection-end-line="12" selection-end-column="63" />
+          <folding>
+            <element signature="e#129#144#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
