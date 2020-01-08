@@ -13,6 +13,7 @@ import re
 import os
 import json
 import shutil
+from datetime import date, timedelta
 
 # 参数的统一管理
 flags = tf.app.flags
@@ -20,19 +21,21 @@ flags.DEFINE_float("dropout_rate", 0.5, "Dropout rate")
 flags.DEFINE_float("learning_rate", 0.02, "Learning rate")
 flags.DEFINE_integer("embedding_size", 128, "embedding size")
 flags.DEFINE_integer("num_filters", 100, "number of filters")
-flags.DEFINE_integer("num_classes", 4, "number of classes")
+flags.DEFINE_integer("num_classes", 14, "number of classes")
 flags.DEFINE_integer("shuffle_buffer_size", 500000, "dataset shuffle buffer size")
 flags.DEFINE_integer("sentence_max_len", 55, "max length of sentences")
 flags.DEFINE_integer("batch_size", 128, "number of instances in a batch")
 flags.DEFINE_integer("save_checkpoints_steps", 5000, "Save checkpoints every this many steps")
 flags.DEFINE_integer("train_steps", 10000, "Number of (global) training steps to perform")
-flags.DEFINE_string("data_dir", "data_csv", "Directory containing the dataset")
+flags.DEFINE_string("data_dir", "textcnn_data", "Directory containing the dataset")
 flags.DEFINE_string("model_dir", "./model_dir", "Base directory for saving model")
+flags.DEFINE_string("date_dir", '', "model date partion")
 flags.DEFINE_string("filter_sizes", "3,4,5", "Comma-separated list of number of window size in each filter")
 flags.DEFINE_string("pad_word", "<pad>", "used for pad sentence")
 flags.DEFINE_boolean("clear_existing_model", False, "clear existing model or not")
 flags.DEFINE_float("l2_reg", 0.0001, "L2 regularization")
 flags.DEFINE_string("optimizer", 'Adagrad', "optimizer type {Adam, Adagrad, GD, Momentum}")
+flags.DEFINE_string("task_type", 'train', "task type {train, eval, export}")
 FLAGS = flags.FLAGS
 
 
@@ -110,7 +113,7 @@ def my_model(features, labels, mode, params):
             'dropout_rate': FLAGS.dropout_rate
         }
     :return:
-    :description:和之前卷积过程一致：https://github.com/sladesha/deep_learning/blob/master/TextCNN/textcnn/text_cnn.py
+    :description:和之前卷积过程一致：https://github.com/sladesha/deep_learning/blob/master/TextCNN/textcnn_data/text_cnn.py
     '''
     sentence = features['sentence']
     embeddings = tf.get_variable(name="embeddings", dtype=tf.float32,
@@ -147,6 +150,18 @@ def my_model(features, labels, mode, params):
                                                scope='deep_out')
     # logits = tf.layers.dense(h_pool_flat, FLAGS.num_classes, activation=None)
 
+    predictions = {"prob": logits}
+    export_outputs = {
+        tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY: tf.estimator.export.PredictOutput(
+            predictions)}
+
+    # predict输出
+    if mode == tf.estimator.ModeKeys.PREDICT:
+        return tf.estimator.EstimatorSpec(
+            mode=mode,
+            predictions=predictions,
+            export_outputs=export_outputs)
+
     # ------bulid optimizer------
     if FLAGS.optimizer == 'Adam':
         optimizer = tf.train.AdamOptimizer(learning_rate=params['learning_rate'], beta1=0.9, beta2=0.999, epsilon=1e-8)
@@ -162,14 +177,15 @@ def my_model(features, labels, mode, params):
     def _train_op_fn(loss):
         return optimizer.minimize(loss, global_step=tf.train.get_global_step())
 
-    my_head = tf.contrib.estimator.multi_class_head(n_classes=FLAGS.num_classes)
-    return my_head.create_estimator_spec(
-        features=features,
-        mode=mode,
-        labels=labels,
-        logits=logits,
-        train_op_fn=_train_op_fn
-    )
+    if mode == tf.estimator.ModeKeys.TRAIN:
+        my_head = tf.contrib.estimator.multi_class_head(n_classes=FLAGS.num_classes)
+        return my_head.create_estimator_spec(
+            features=features,
+            mode=mode,
+            labels=labels,
+            logits=logits,
+            train_op_fn=_train_op_fn
+        )
 
 
 def main(_):
@@ -183,6 +199,9 @@ def main(_):
     "num_oov_buckets": 1
 }
     '''
+    # 时间标记ckpt地址
+    FLAGS.date_dir = (date.today() + timedelta(-1)).strftime('%Y%m%d')
+    FLAGS.model_dir = FLAGS.model_dir + FLAGS.date_dir
     if FLAGS.clear_existing_model:
         try:
             shutil.rmtree(FLAGS.model_dir)
@@ -191,11 +210,19 @@ def main(_):
         else:
             print("existing model cleaned at %s" % FLAGS.model_dir)
 
+    # 基础参数（词汇量，train/test量）
     json_path = os.path.join(FLAGS.data_dir, 'dataset_params.json')
     with open(json_path) as f:
         config = json.load(f)
+
+    # 超参数
+    params = {
+        'vocab_size': config["vocab_size"],
+        'filter_sizes': list(map(int, FLAGS.filter_sizes.split(','))),
+        'learning_rate': FLAGS.learning_rate,
+        'dropout_rate': FLAGS.dropout_rate
+    }
     FLAGS.pad_word = config["pad_word"]
-    # shuffle全量数据
     if config["train_size"] < FLAGS.shuffle_buffer_size:
         FLAGS.shuffle_buffer_size = config["train_size"]
     print("shuffle_buffer_size:", FLAGS.shuffle_buffer_size)
@@ -206,32 +233,44 @@ def main(_):
     # train data
     path_train = os.path.join(FLAGS.data_dir, 'train.csv')
     # eval data
-    path_eval = os.path.join(FLAGS.data_dir, 'test.csv')
+    path_eval = os.path.join(FLAGS.data_dir, 'eval.csv')
 
+    # 模型区
+    runConfig = tf.estimator.RunConfig(model_dir=FLAGS.model_dir, save_checkpoints_steps=FLAGS.save_checkpoints_steps)
     classifier = tf.estimator.Estimator(
         model_fn=my_model,
-        params={
-            'vocab_size': config["vocab_size"],
-            'filter_sizes': list(map(int, FLAGS.filter_sizes.split(','))),
-            'learning_rate': FLAGS.learning_rate,
-            'dropout_rate': FLAGS.dropout_rate
-        },
-        config=tf.estimator.RunConfig(model_dir=FLAGS.model_dir, save_checkpoints_steps=FLAGS.save_checkpoints_steps)
+        params=params,
+        config=runConfig
     )
+    if FLAGS.task_type == 'train':
+        print("start train：")
+        train_spec = tf.estimator.TrainSpec(
+            input_fn=lambda: input_fn(path_train, path_words, FLAGS.shuffle_buffer_size, config["num_oov_buckets"]),
+            max_steps=FLAGS.train_steps
+        )
+        eval_spec = tf.estimator.EvalSpec(
+            input_fn=lambda: input_fn(path_eval, path_words, FLAGS.shuffle_buffer_size, config["num_oov_buckets"]),
+            throttle_secs=300)
+        tf.estimator.train_and_evaluate(classifier, train_spec, eval_spec)
 
-    train_spec = tf.estimator.TrainSpec(
-        input_fn=lambda: input_fn(path_train, path_words, FLAGS.shuffle_buffer_size, config["num_oov_buckets"]),
-        max_steps=FLAGS.train_steps
-    )
-    input_fn_for_eval = lambda: input_fn(path_eval, path_words, FLAGS.shuffle_buffer_size, config["num_oov_buckets"])
-    eval_spec = tf.estimator.EvalSpec(input_fn=input_fn_for_eval, throttle_secs=300)
+    elif FLAGS.task_type == 'eval':
+        preds = classifier.predict(
+            input_fn=lambda: input_fn(path_eval, path_words, FLAGS.shuffle_buffer_size, config["num_oov_buckets"]),
+            predict_keys="prob")
+        with open(FLAGS.data_dir + "/pred.txt", "w") as fo:
+            for prob in preds:
+                fo.write("%f\n" % (prob['prob']))
 
-    print("start train and evaluate")
-    tf.estimator.train_and_evaluate(classifier, train_spec, eval_spec)
-    print("end train and evaluate")
+    elif FLAGS.task_type == 'export':
+        feature_spec = {
+            'sentence': tf.placeholder(dtype=tf.int64, shape=[None], name='sentence_id')
+        }
+        serving_input_receiver_fn = tf.estimator.export.build_raw_serving_input_receiver_fn(feature_spec)
+        classifier.export_savedmodel(FLAGS.servable_model_dir, serving_input_receiver_fn)
 
 
 if __name__ == "__main__":
     # 启动项
+    # python TextCNN.py --train_steps=2000 --clear_existing_model=True
     tf.logging.set_verbosity(tf.logging.INFO)
     tf.app.run(main=main)
