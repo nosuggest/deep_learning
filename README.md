@@ -112,6 +112,8 @@ record_dataformat_version：在basemodel的基础上，利用record机制存储�
 
 ## TextCNN
 
+![TextCNN]](https://tva1.sinaimg.cn/large/006tNbRwgy1gaqpamko4gj30oz0cgtah.jpg)
+
 在做**黄反广告**文本的识别:
 
 - 初版本是朴素贝叶斯+LR(recall:72%，precision:88%)
@@ -138,6 +140,8 @@ Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://g
 - 在fc的过程中用了tf.tanh替代tf.sigmoid/dice/prule
 
 ## Estimator框架模版
+
+![](https://tva1.sinaimg.cn/large/006tNbRwgy1gaqpbmup8mj30rx0c875s.jpg)
 
 - data
     - 数据构造
