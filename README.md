@@ -112,7 +112,7 @@ record_dataformat_version：在basemodel的基础上，利用record机制存储�
 
 ## TextCNN
 
-![TextCNN]](https://tva1.sinaimg.cn/large/006tNbRwgy1gaqpamko4gj30oz0cgtah.jpg)
+![TextCNN](https://tva1.sinaimg.cn/large/006tNbRwgy1gaqpamko4gj30oz0cgtah.jpg)
 
 在做**黄反广告**文本的识别:
 
