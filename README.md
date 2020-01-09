@@ -159,11 +159,8 @@ Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://g
 Estimator框架重新写了DeepFm和TextCNN，总的来说，代码量差不多只是更加规范化了，以后建议以Estimator框架为模版开发。
 
 # 工具
-- python 3.6
-- tensorflow 1.0.0
-- nltk 3.2.4
-- jieba 0.39
-- data_preprocessing 0.0.2
+
+请参考：[requirements.txt](https://github.com/sladesha/deep_learning/blob/master/requirements.txt)
 
 # 其他
 - E-mail:stw386@sina.com
