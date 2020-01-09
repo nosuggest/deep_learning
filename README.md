@@ -141,10 +141,20 @@ Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://g
 
 - data
     - 数据构造
+    - DataMake.py
+        - 常规构造方法
+    - DeepFmDataMake.py
+        - DeepFM的数据构造
+    - TextCNNDataMake.py
+        - TextCNN的数据构造
 - model
     - 模型框架
+        - DeepFM
+        - TextCNN
 - serving
     - docker部署
+    - serving_grpc_client.py
+        - 调用serving服务
 
 Estimator框架重新写了DeepFm和TextCNN，总的来说，代码量差不多只是更加规范化了，以后建议以Estimator框架为模版开发。
 
@@ -157,4 +167,3 @@ Estimator框架重新写了DeepFm和TextCNN，总的来说，代码量差不多�
 
 # 其他
 - E-mail:stw386@sina.com
-- [Message Board in my bolg](http://shataowei.com)
