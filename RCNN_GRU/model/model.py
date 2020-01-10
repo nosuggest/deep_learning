@@ -203,9 +203,9 @@ class BiGRU_CNN(object):
         Args:
             inputs: Tensor of shape [batch_size, units, input_size]
                 `input_size` must be static (known)
-                `units` axis will be attended over (reduced from output)
+                `units` axis will be attended over (reduced from outputs)
                 `batch_size` will be preserved
-            output_size: Size of output's inner (feature) dimension
+            output_size: Size of outputs's inner (feature) dimension
         Returns:
            outputs: Tensor of shape [batch_size, output_dim].
         """

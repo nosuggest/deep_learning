@@ -113,7 +113,7 @@ class GRU4Risk:
     def build_model(self):
 
         self.X = tf.placeholder(tf.int32, [self.batch_size], name='input')
-        self.Y = tf.placeholder(tf.int32, [self.batch_size], name='output')
+        self.Y = tf.placeholder(tf.int32, [self.batch_size], name='outputs')
         self.state = [tf.placeholder(tf.float32, [self.batch_size, self.rnn_size], name='rnn_state') for _ in
                       range(self.layers)]
         self.global_step = tf.Variable(0, name='global_step', trainable=False)
@@ -157,7 +157,7 @@ class GRU4Risk:
         self.sfw = softmax_W
         # print 'yhat',self.yhat.shape
         # print 'logits' ,logits.shape
-        # print 'output',output.shape
+        # print 'outputs',outputs.shape
         # print 'state ',self.final_state
         # print 'sampled_W',sampled_W.shape
         if not self.is_training:
@@ -349,7 +349,7 @@ class GRU4Risk:
     #             ret_sessionid = self.current_session[session_change]
     #     self.current_session = session_ids.copy()
     #     in_idxs = itemidmap[input_item_ids]
-    #     fetches = [self.output, self.final_state]
+    #     fetches = [self.outputs, self.final_state]
     #     feed_dict = {self.X: in_idxs}
     #     for i in range(self.layers):
     #         feed_dict[self.state[i]] = self.predict_state[i]

@@ -66,7 +66,7 @@ def eval(w2v_model):
 
             input_x = graph.get_operation_by_name("input_x").outputs[0]
             dropout_keep_prob = graph.get_operation_by_name("dropout_keep_prob").outputs[0]
-            predictions = graph.get_operation_by_name("output/predictions").outputs[0]
+            predictions = graph.get_operation_by_name("outputs/predictions").outputs[0]
 
             x_test, y_test = load_data(w2v_model,1290)
             batches = data_helpers.batch_iter(list(x_test), FLAGS.batch_size, 1, shuffle=False)

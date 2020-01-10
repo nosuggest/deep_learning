@@ -130,7 +130,7 @@ class model():
         # concat
         din_all = tf.concat([self.fm_part, self.deep_embedding], axis=1)
         self.out = tf.add(tf.matmul(din_all, self.weight['last_layer']), self.weight['last_bias'])
-        print('output:', self.out)
+        print('outputs:', self.out)
 
         # loss
         self.out = tf.nn.sigmoid(self.out)

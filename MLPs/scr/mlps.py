@@ -62,7 +62,7 @@ class MLPS(object):
             self.global_step = tf.Variable(0, trainable=False)
             # 交叉熵，用来衡量两个分布之间的相似程度
             cross_entropy_mean = -tf.reduce_mean(self.y_ * tf.log(self.logits + 1e-24))
-            # cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=self.y_, logits=self.output)
+            # cross_entropy = tf.nn.softmax_cross_entropy_with_logits(labels=self.y_, logits=self.outputs)
             # cross_entropy_mean = tf.reduce_mean(cross_entropy)
             self.loss = cross_entropy_mean
 

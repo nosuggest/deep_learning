@@ -111,7 +111,7 @@ class Model(object):
             #                      tf.nn.embedding_lookup(msort_emb_w, recall_msort)], axis=1)
             # recall_b=tf.gather(item_b,self.recall_skn_idx)
             # self.logits = tf.matmul(layer_3, recall_emb, transpose_b=True) + recall_b
-            # self.output = tf.nn.softmax(self.logits)
+            # self.outputs = tf.nn.softmax(self.logits)
             all_emb = tf.concat([item_emb_w,
                                  tf.nn.embedding_lookup(brand_emb_w, brand_list),
                                  tf.nn.embedding_lookup(msort_emb_w, msort_list)], axis=1)

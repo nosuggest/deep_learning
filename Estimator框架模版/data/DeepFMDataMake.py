@@ -11,7 +11,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--threads", type=int, default=2, help="threads num")
 parser.add_argument("--input_dir", type=str, default="", help="input data dir")
-parser.add_argument("--output_dir", type=str, default="", help="feature map output dir")
+parser.add_argument("--output_dir", type=str, default="", help="feature map outputs dir")
 parser.add_argument("--mincutoff", type=int, default=200, help="cutoff long-tailed categorical values")
 FLAGS, unparsed = parser.parse_known_args()
 

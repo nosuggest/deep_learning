@@ -36,6 +36,7 @@
 - 代码逻辑不清晰，随处定义变量，随处定义函数
 - 由tornado服务迁往serving服务，需要更新的更频繁，接受的代码更加简单易上手，不需要高频去查各种tf接口
 
+关于深度学习相关的deepfm的介绍，可以快速入门一下[基于Tensorflow实现DeepFM](http://shataowei.com/2018/07/30/基于Tensorflow实现DeepFM/)。
 
 ****
 
@@ -161,6 +162,18 @@ Bert+BiLSTM+Crf/FNN，关于Bert的更多可以参考我的[ppt分享](https://g
         - 调用serving服务
 
 Estimator框架重新写了DeepFm和TextCNN，总的来说，代码量差不多只是更加规范化了，以后建议以Estimator框架为模版开发。
+
+## Doc2Vector
+
+- 没有采取论文[Distributed Representations of Sentences and Documents](https://cs.stanford.edu/~quocle/paragraph_vector.pdf)的首位追加模式
+- 采取了word2vec中的直接embedding的方法，把doc进行了embedding，通过反向传递去修正
+
+```python
+if params["embedding_merge"] == "concat":
+    final_embed = tf.concat([embed, doc_embed], axis=1)
+else:
+    final_embed = (embed + doc_embed) / 2.0
+```
 
 # 工具
 

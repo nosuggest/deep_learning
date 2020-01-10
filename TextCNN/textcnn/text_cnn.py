@@ -74,7 +74,7 @@ class TextCNN(object):
             self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
 
         # Final (unnormalized) scores and predictions
-        with tf.name_scope("output"):
+        with tf.name_scope("outputs"):
             W = tf.get_variable(
                 "W", trainable=True,
                 shape=[num_filters_total, num_classes],
