@@ -75,9 +75,8 @@ class Doc2Vec(tf.estimator.Estimator):
             doc_embeddings = tf.get_variable(name="doc_embeddings", shape=[doc_vocab_size, doc_embedding_size],
                                              dtype=tf.float32, initializer=tf.random_uniform_initializer(-1.0, 1.0))
             embed = tf.nn.embedding_lookup(embeddings, features["context_word"])
-            embed = tf.reduce_sum(embed, -1)
-            doc_embed = tf.nn.embedding_lookup(doc_embeddings, features["cate_id"])
-
+            embed = tf.reshape(tf.reduce_sum(embed, 0), (1, -1))
+            doc_embed = tf.reshape(tf.nn.embedding_lookup(doc_embeddings, features["cate_id"]), (1, -1))
             # 去量冈化
             init_stddev = 1.0 / np.sqrt(hidden_units)
             weights = tf.get_variable("weights", [vocabulary_size, hidden_units], dtype=tf.float32,
