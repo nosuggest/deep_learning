@@ -24,7 +24,7 @@ class Args():
 
 if __name__ == '__main__':
     # read data
-    with open('/Data/sladesha/youtube/Neg_Data/dataset_mine_add.pkl', 'rb') as f:
+    with open('/data/sladesha/youtube/Neg_Data/dataset_mine_add.pkl', 'rb') as f:
         train_set_1 = pickle.load(f)
         train_set_2 = pickle.load(f)
         train_set_3 = pickle.load(f)

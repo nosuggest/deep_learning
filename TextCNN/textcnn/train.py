@@ -14,7 +14,7 @@ from tensorflow.contrib import learn
 # Parameters
 # ==================================================
 
-# Data loading params
+# data loading params
 tf.flags.DEFINE_float("dev_sample_percentage", .1, "Percentage of the training data to use for validation")
 
 # 训练数据

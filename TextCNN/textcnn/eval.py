@@ -13,8 +13,8 @@ import csv
 # Parameters
 # ==================================================
 
-# Data Parameters
-tf.flags.DEFINE_string("valid_data_file", "../data/cutclean_label_corpus10000.txt", "Data source for the positive data.")
+# data Parameters
+tf.flags.DEFINE_string("valid_data_file", "../data/cutclean_label_corpus10000.txt", "data source for the positive data.")
 tf.flags.DEFINE_string("w2v_file", "../data/vectors.bin", "w2v_file path")
 
 # Eval Parameters

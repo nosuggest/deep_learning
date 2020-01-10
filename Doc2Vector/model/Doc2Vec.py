@@ -18,9 +18,9 @@ flags.DEFINE_integer("train_steps", 10000, "number of (global) training steps to
 flags.DEFINE_integer("save_checkpoints_secs", 720, "save checkpoints per %save_checkpoints_secs seconds")
 flags.DEFINE_integer("keep_checkpoint_max", 3, "keep checkpoints amount")
 flags.DEFINE_integer("batch_size", 512, "training batch size")
-flags.DEFINE_integer("buffer_size", 128 * 1024 * 1024, "dataset read buffer_size")
-flags.DEFINE_integer("word_vocab_size", 800000, "the length of word vocabulary")
-flags.DEFINE_integer("cate_vocab_size", 23000, "the length of cate vocabulary")
+flags.DEFINE_integer("buffer_size", 1024, "dataset read buffer_size")
+flags.DEFINE_integer("word_vocab_size", 32000, "the length of word vocabulary")
+flags.DEFINE_integer("cate_vocab_size", 1800, "the length of cate vocabulary")
 flags.DEFINE_integer("word_embedding_size", 128, "the dim of word embedding vector")
 flags.DEFINE_integer("cate_embedding_size", 128, "the dim of cate embedding vector")
 flags.DEFINE_string("embedding_merge", 'concat', "embedding vector summary type，optimizer type {concat，avg}")
@@ -31,9 +31,8 @@ flags.DEFINE_integer("log_step_count_steps", 500, "log_step_count_steps")
 flags.DEFINE_integer("tf_random_seed", 0, "random seed")
 flags.DEFINE_boolean("evaluate", False, "whether to start evaluation process")
 flags.DEFINE_string("checkpointDir", "model_dir", "Directory where checkpoints and event logs are written to.")
-flags.DEFINE_string("train_data", "text/data", "path to the training data")
-flags.DEFINE_string("eval_data", "text/data", "path to the evaluation data.")
-
+flags.DEFINE_string("train_data", "text/data/*.tfrecord", "path to the training data")
+flags.DEFINE_string("eval_data", "text/data/*.tfrecord", "path to the evaluation data.")
 
 FLAGS = flags.FLAGS
 
@@ -76,6 +75,7 @@ class Doc2Vec(tf.estimator.Estimator):
             doc_embeddings = tf.get_variable(name="doc_embeddings", shape=[doc_vocab_size, doc_embedding_size],
                                              dtype=tf.float32, initializer=tf.random_uniform_initializer(-1.0, 1.0))
             embed = tf.nn.embedding_lookup(embeddings, features["context_word"])
+            embed = tf.reduce_sum(embed, -1)
             doc_embed = tf.nn.embedding_lookup(doc_embeddings, features["cate_id"])
 
             # 去量冈化

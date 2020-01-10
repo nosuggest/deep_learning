@@ -24,7 +24,7 @@ class Args():
 
 if __name__ == '__main__':
     # read data
-    with open('/Data/sladesha/youtube/Neg_Data/dataset_mine_query.pkl', 'rb') as f:
+    with open('/data/sladesha/youtube/Neg_Data/dataset_mine_query.pkl', 'rb') as f:
         train_set_1 = pickle.load(f)
         train_set_2 = pickle.load(f)
         train_set_3 = pickle.load(f)
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     train_batch_size = 32
     test_batch_size = 50
     eval_batch_size = 50
-    checkpoint_dir = '/Data/sladesha/youtube/offline/save_path/ckpt'
+    checkpoint_dir = '/data/sladesha/youtube/offline/save_path/ckpt'
 
     gpu_config = tf.ConfigProto()
     gpu_config.gpu_options.allow_growth = True

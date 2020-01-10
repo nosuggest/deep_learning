@@ -1,7 +1,7 @@
 import pickle
 import pandas as pd
 
-PATH_TO_DATA = '/Data/sladesha/youtube/Neg_Data/click_brand_msort_data_20180415.txt'
+PATH_TO_DATA = '/data/sladesha/youtube/Neg_Data/click_brand_msort_data_20180415.txt'
 data = pd.read_csv(PATH_TO_DATA, sep='\t', header=None)
 data.columns = ['UId', 'ItemId', 'BrandId', 'MiddlesortId', 'ClickTime', 'Date']
 data = data[['UId', 'ItemId', 'BrandId', 'MiddlesortId', 'ClickTime']]

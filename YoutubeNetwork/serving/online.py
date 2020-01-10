@@ -22,7 +22,7 @@ class Args():
     msort_count = -1
 
 # load data
-with open('/Data/sladesha/youtube/Neg_Data/dataset_mine_add.pkl', 'rb') as f:
+with open('/data/sladesha/youtube/Neg_Data/dataset_mine_add.pkl', 'rb') as f:
     train_set_1 = pickle.load(f)
     train_set_2 = pickle.load(f)
     train_set_3 = pickle.load(f)
@@ -74,8 +74,8 @@ model_exporter.init(
         'basic': tf.contrib.session_bundle.exporter.generic_signature({'basic': model.basic}),
         'keep_prob': tf.contrib.session_bundle.exporter.generic_signature({'keep_prob': model.keep_prob}),
         'outputs': tf.contrib.session_bundle.exporter.generic_signature({'y': model.output})})
-model_exporter.export('/Data/sladesha/youtube/offline/test/',tf.constant(save_version), sess)
+model_exporter.export('/data/sladesha/youtube/offline/test/',tf.constant(save_version), sess)
 
 # start online serve
 # bazel build //tensorflow_serving/model_servers:tensorflow_model_server
-# bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --port=9005 --model_name=test --model_base_path=/Data/sladesha/youtube/offline/test/
+# bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --port=9005 --model_name=test --model_base_path=/data/sladesha/youtube/offline/test/
