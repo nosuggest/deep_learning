@@ -9,7 +9,6 @@ from __future__ import division
 from __future__ import print_function
 
 import os
-import glob
 
 import tensorflow as tf
 import numpy as np
@@ -39,9 +38,13 @@ def gen_tfrecords(in_file):
                     "target_word": tf.train.Feature(int64_list=tf.train.Int64List(value=target.astype(np.int))),
                     "cate_id": tf.train.Feature(int64_list=tf.train.Int64List(value=[idx]))
                 }
+                idx += 1
                 # serialized to Example
                 example = tf.train.Example(features=tf.train.Features(feature=feature))
+                print(example)
                 serialized = example.SerializeToString()
+                print(serialized)
+                print(".....")
                 tfrecord_out.write(serialized)
     # 数据打包完成
     tfrecord_out.close()
