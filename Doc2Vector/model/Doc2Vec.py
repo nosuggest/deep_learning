@@ -6,11 +6,8 @@
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-import os
-import json
 import numpy as np
 import tensorflow as tf
-from tensorflow import logging
 
 # 参数的统一管理
 flags = tf.app.flags
