@@ -9,7 +9,6 @@ from datetime import date, timedelta
 import os
 
 # 参数的统一管理
-FLAGS = tf.app.flags.FLAGS
 flags = tf.app.flags
 flags.DEFINE_integer("feature_size", 0, "Number of features")
 flags.DEFINE_integer("field_size", 0, "Number of fields")
@@ -30,6 +29,7 @@ flags.DEFINE_string("date_dir", '', "model date partion")
 flags.DEFINE_string("model_dir", '', "model check point dir")
 flags.DEFINE_string("task_type", 'train', "task type {train, test, eval, export}")
 flags.DEFINE_boolean("clear_existing_model", False, "clear existing model or not")
+FLAGS = flags.FLAGS
 
 
 def input_fn(filenames, batch_size=64, num_epochs=None, shuffle_buffer_size=None):
