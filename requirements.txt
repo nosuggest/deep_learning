@@ -190,7 +190,7 @@ synicdomain == 0.0.6.1
 # YoutubeNetwork/record_dataformat_version/train/read_tfrecords.py: 1
 # YoutubeNetwork/record_dataformat_version/train/train.py: 6
 # YoutubeNetwork/serving/online.py: 8
-tensorflow == 1.14.0
+tensorflow == 2.5.0
 
 # Estimator框架模版/serving/serving_grpc_client.py: 13
 tensorflow_serving_api == 1.14.0
