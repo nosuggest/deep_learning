@@ -78,7 +78,7 @@ matplotlib == 2.0.2
 # YoutubeNetwork/record_dataformat_version/train/train.py: 5
 # YoutubeNetwork/serving/online.py: 7
 # word2vec_recommend/word2vec_recommender.py: 3
-numpy == 1.17.3
+numpy == 1.22.0
 
 # RNN_applied_classification/src/main_rnn.py: 9
 # YoutubeNetwork/attention_version/main.py: 9
