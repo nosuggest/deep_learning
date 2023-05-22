@@ -132,7 +132,7 @@ pyrna == 1.0.0.dev4
 pyvision == 0.0.3
 
 # Estimator框架模版/serving/serving_grpc_client.py: 8
-requests == 2.22.0
+requests == 2.31.0
 
 # CNN_applied_classification/src/main_cnn.py: 2
 # CNN_applied_classification/src/modelC.py: 1
